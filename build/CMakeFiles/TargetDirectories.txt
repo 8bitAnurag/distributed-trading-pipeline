@@ -1,0 +1,5 @@
+C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/CMakeFiles/ALL_BUILD.dir
+C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/CMakeFiles/ZERO_CHECK.dir
+C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/feed_handler/CMakeFiles/feed_handler.dir
+C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/ipc/CMakeFiles/ipc_lib.dir
+C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/engine/CMakeFiles/engine.dir

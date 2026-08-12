@@ -1,0 +1,12 @@
+//
+// Created by Anurag on 11/08/2026.
+//
+
+#ifndef DISTRIBUTED_TRADING_PIPELINE_MAIN_H
+#define DISTRIBUTED_TRADING_PIPELINE_MAIN_H
+
+
+class main {
+};
+
+#endif //DISTRIBUTED_TRADING_PIPELINE_MAIN_H

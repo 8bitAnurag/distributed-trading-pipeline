@@ -4,10 +4,13 @@
 
 #ifndef DISTRIBUTED_TRADING_PIPELINE_SPSC_QUEUE_H
 #define DISTRIBUTED_TRADING_PIPELINE_SPSC_QUEUE_H
-#include "../../core/include/limits.h"
-#include <cstddef>
-#include "../../core/include/order.h"
+#pragma once
+#include <climits>
+#include <cstdint>
 #include <atomic>
+#include <array>
+#include "../../core/include/order.h"
+
 namespace ipc {
     class SPSCQueue {
     private:

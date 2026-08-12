@@ -1,0 +1,13 @@
+//
+// Created by Anurag on 13/08/2026.
+//
+
+#ifndef DISTRIBUTED_TRADING_PIPELINE_TEST_SPSC_QUEUE_H
+#define DISTRIBUTED_TRADING_PIPELINE_TEST_SPSC_QUEUE_H
+
+
+class test_spsc_queue {
+};
+
+
+#endif //DISTRIBUTED_TRADING_PIPELINE_TEST_SPSC_QUEUE_H

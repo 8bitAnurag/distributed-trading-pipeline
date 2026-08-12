@@ -1,0 +1,11 @@
+{
+	"InstallScripts" : 
+	[
+		"C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/cmake_install.cmake",
+		"C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/core/cmake_install.cmake",
+		"C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/feed_handler/cmake_install.cmake",
+		"C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/ipc/cmake_install.cmake",
+		"C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/engine/cmake_install.cmake"
+	],
+	"Parallel" : false
+}

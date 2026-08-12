@@ -1,0 +1,10 @@
+^C:\USERS\NIKHIL\DOCUMENTS\ANURAG\DISTRIBUTED-TRADING-PIPELINE\BUILD\CMAKEFILES\17C17BE944DCFF222950C8DCBFDD59D3\GENERATE.STAMP.RULE
+setlocal
+"C:\Program Files\CMake\bin\cmake.exe" -SC:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline -BC:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build --check-stamp-list CMakeFiles/generate.stamp.list --vs-solution-file C:/Users/Nikhil/Documents/Anurag/distributed-trading-pipeline/build/distributed_trading_pipeline.slnx
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal & call :cmErrorLevel %errorlevel% & goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd

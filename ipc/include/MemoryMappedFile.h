@@ -4,8 +4,14 @@
 
 #ifndef DISTRIBUTED_TRADING_PIPELINE_MEMORY_MAPPED_H
 #define DISTRIBUTED_TRADING_PIPELINE_MEMORY_MAPPED_H
-#include <cstddef>
+#pragma once
+
+#include <climits>
+#include <cstdint>
+#include <windows.h>
 #include <string>
+#include <stdexcept>
+
 namespace ipc {
     class MemoryMappedFile {
     public:
