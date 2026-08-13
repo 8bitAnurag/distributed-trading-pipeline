@@ -8,3 +8,5 @@ add_subdirectory(core)
 add_subdirectory(feed_handler)
 add_subdirectory(ipc)
 add_subdirectory(engine)
+add_subdirectory(tests)
+
