@@ -13,6 +13,8 @@ namespace core {
 
     constexpr std::size_t RING_BUFFER_CAPACITY = 1 << 10;
 
-    constexpr std::size_t MAX_PRICE_LEVELS = 65536;
+    constexpr std::size_t MAX_PRICE_LEVELS = 100'000;
+
+    constexpr std::size_t MAX_ORDERS_PER_PRICE_LEVEL = 1024;
 }
 #endif //DISTRIBUTED_TRADING_PIPELINE_LIMITS_H
