@@ -11,8 +11,12 @@
 #include "../../core/include/trading_limits.h"
 #include "../../core/include/order.h"
 
+using OrderHandle = uint64_t;
+
 namespace engine {
     constexpr std::size_t INVALID_INDEX = std::numeric_limits<std::size_t>::max();
+
+    constexpr OrderHandle INVALID_HANDLE = std::numeric_limits<OrderHandle>::max();
 
     struct PriceLevel {
         std::size_t head{INVALID_INDEX};
@@ -26,6 +30,8 @@ namespace engine {
 
         std::size_t next{INVALID_INDEX};
         std::size_t prev{INVALID_INDEX};
+
+        uint64_t generation{1};
     };
 
     class OrderBook {
@@ -47,14 +53,23 @@ namespace engine {
 
         std::size_t allocate_node();
 
+        static constexpr uint64_t SLOT_BITS = 18;
+        static constexpr uint64_t SLOT_MASK = core::MAX_ACTIVE_ORDERS - 1;
+
+        static_assert(
+            core::MAX_ACTIVE_ORDERS == (1ULL << SLOT_BITS),
+            "MAX_ACTIVE_ORDERS must equal 2^18"
+        );
+
     public:
         OrderBook() {
             for (std::size_t i = 0; i < core::MAX_ACTIVE_ORDERS; ++i) {
                 free_indices_[i] = core::MAX_ACTIVE_ORDERS - 1 - i;
             }
         }
-        bool add_order(const core::Order& order);
+        OrderHandle add_order(const core::Order& order);
         bool cancel_order(uint64_t order_id);
+        void free_node(std::size_t node_index);
 
         const PriceLevel* best_bid() const; // Highest number
         const PriceLevel* best_ask() const; // Lowest number
