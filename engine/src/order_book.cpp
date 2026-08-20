@@ -7,14 +7,10 @@
 namespace engine {
 
     void OrderBook::free_node(std::size_t node_index) {
+        orders_pool_[node_index].next = INVALID_INDEX;
+        orders_pool_[node_index].prev = INVALID_INDEX;
 
-        OrderNode& node = orders_pool_[node_index];
-
-        ++node.generation;
-
-        node.next = INVALID_INDEX;
-        node.prev = INVALID_INDEX;
-
+        ++orders_pool_[node_index].generation;
         free_indices_[free_indices_count_++] = node_index;
     }
 
@@ -88,6 +84,10 @@ namespace engine {
 
     bool OrderBook::cancel_order(OrderHandle handle) {
 
+        if (handle == INVALID_HANDLE) {
+            return false;
+        }
+
         const std::size_t node_index = static_cast<std::size_t>(handle & SLOT_MASK);
 
         const uint64_t generation = handle >> SLOT_BITS;
@@ -132,7 +132,8 @@ namespace engine {
 
             free_node(node_index);
 
-            return true;
+
         }
+        return true;
     }
 }

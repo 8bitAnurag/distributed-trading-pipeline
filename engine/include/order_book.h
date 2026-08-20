@@ -57,8 +57,7 @@ namespace engine {
         static constexpr uint64_t SLOT_MASK = core::MAX_ACTIVE_ORDERS - 1;
 
         static_assert(
-            core::MAX_ACTIVE_ORDERS == (1ULL << SLOT_BITS),
-            "MAX_ACTIVE_ORDERS must equal 2^18"
+            core::MAX_ACTIVE_ORDERS == (1ULL << SLOT_BITS)
         );
 
     public:
@@ -67,9 +66,11 @@ namespace engine {
                 free_indices_[i] = core::MAX_ACTIVE_ORDERS - 1 - i;
             }
         }
+
+        void free_node(std::size_t node_index);
         OrderHandle add_order(const core::Order& order);
         bool cancel_order(uint64_t order_id);
-        void free_node(std::size_t node_index);
+
 
         const PriceLevel* best_bid() const; // Highest number
         const PriceLevel* best_ask() const; // Lowest number
