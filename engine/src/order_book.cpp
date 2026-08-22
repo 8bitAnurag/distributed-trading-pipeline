@@ -5,6 +5,32 @@
 #include "../include/order_book.h"
 
 namespace engine {
+    std::size_t OrderBook::allocate_node() {
+
+        if (free_indices_count_ == 0) {
+            return INVALID_INDEX;
+        }
+
+        return free_indices_[--free_indices_count_];
+    }
+
+    const PriceLevel* OrderBook::best_bid() const {
+
+        if (best_bid_index_ == INVALID_INDEX) {
+            return nullptr;
+        }
+
+        return &bids_[best_bid_index_];
+    }
+
+    const PriceLevel* OrderBook::best_ask() const {
+
+        if (best_ask_index_ == INVALID_INDEX) {
+            return nullptr;
+        }
+
+        return &asks_[best_ask_index_];
+    }
 
     void OrderBook::free_node(std::size_t node_index) {
         orders_pool_[node_index].next = INVALID_INDEX;
